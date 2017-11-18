@@ -1,0 +1,25 @@
+{
+  "name": "mongoose-schema-2-json-schema",
+  "version": "1.0.0-alpha.1",
+  "description": "Mongoose schema to JSON schema.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "ibird",
+    "node",
+    "koa",
+    "web",
+    "app",
+    "http",
+    "application",
+    "framework",
+    "examples"
+  ],
+  "author": "yinfxs",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "mongoose": "^4.13.0"
+  }
+}
