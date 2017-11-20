@@ -3,22 +3,25 @@
   "version": "1.0.0-alpha.1",
   "description": "Mongoose schema to JSON schema.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yinfxs/mongoose-schema-2-json-schema.git"
+  },
   "scripts": {
     "test": "node test/test.js"
   },
   "keywords": [
-    "ibird",
-    "node",
-    "koa",
-    "web",
-    "app",
-    "http",
-    "application",
-    "framework",
-    "examples"
+    "mongoose",
+    "schema",
+    "json",
+    "JSONSchema"
   ],
   "author": "yinfxs",
   "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/yinfxs/mongoose-schema-2-json-schema/issues"
+  },
+  "homepage": "https://github.com/yinfxs/mongoose-schema-2-json-schema#readme",
   "devDependencies": {
     "mongoose": "^4.13.0"
   }
