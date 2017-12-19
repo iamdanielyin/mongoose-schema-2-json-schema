@@ -51,11 +51,11 @@ function convert(title, schema) {
             property.required = v.isRequired;
         }
         if (v.options.ref) property.type = v.options.ref;
-        if (v.options.description) property.description = v.options.description;
+        if (v.options.description || v.options.remark) property.description = v.options.description || v.options.remark;
         if (v.options.example) property.example = v.options.example;
         if (v.options.datetype && instance === 'Date') property.type = v.options.datetype;
         if (v.defaultValue !== null && v.defaultValue !== undefined && (typeof v.defaultValue !== 'function')) property.default = v.defaultValue;
-        if (v.options.displayName) property.displayName = v.options.displayName;
+        if (v.options.title || v.options.displayName) property.title = v.options.title || v.options.displayName;
         if (v.enumValues && v.enumValues.length > 0) property.enum = v.enumValues;
         if (property.type === 'array' && v.$isMongooseDocumentArray === true) property.items = convert(v.schema);
         if (v.validators && v.validators.length > 0) {
@@ -69,7 +69,8 @@ function convert(title, schema) {
                 }
             }
         }
-        object.properties[v.path] = property;
+        if (!property.title && property)
+            object.properties[v.path] = property;
     }
     return object;
 }
