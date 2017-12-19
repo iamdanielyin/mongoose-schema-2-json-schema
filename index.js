@@ -69,8 +69,7 @@ function convert(title, schema) {
                 }
             }
         }
-        if (!property.title && property)
-            object.properties[v.path] = property;
+        object.properties[v.path] = property;
     }
     return object;
 }
