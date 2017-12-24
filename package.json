@@ -1,6 +1,6 @@
 {
   "name": "mongoose-schema-2-json-schema",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Mongoose schema to JSON schema.",
   "main": "index.js",
   "repository": {

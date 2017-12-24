@@ -56,6 +56,12 @@ function convert(title, schema) {
         if (v.options.datetype && instance === 'Date') property.type = v.options.datetype;
         if (v.defaultValue !== null && v.defaultValue !== undefined && (typeof v.defaultValue !== 'function')) property.default = v.defaultValue;
         if (v.options.title || v.options.displayName) property.title = v.options.title || v.options.displayName;
+        if (property.type === 'array' && Array.isArray(v.options.type) && v.options.type.length > 0) {
+            const typeItem = v.options.type[0];
+            if (typeItem.title || typeItem.displayName) {
+                property.title = typeItem.title || typeItem.displayName;
+            }
+        }
         if (v.enumValues && v.enumValues.length > 0) property.enum = v.enumValues;
         if (property.type === 'array' && v.$isMongooseDocumentArray === true) property.items = convert(v.schema);
         if (v.validators && v.validators.length > 0) {
